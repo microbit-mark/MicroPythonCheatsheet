@@ -1,6 +1,6 @@
-# Python Editor cheatsheet
+# 🐍 Python cheatsheet
 
-Just the basics to get coding using MicroPython on the microbit [python.microbit.org](https://python.microbit.org)
+Just the basics to get coding using MicroPython on the BBC microbit [python.microbit.org](https://python.microbit.org)
 
 
 ## Features
@@ -55,6 +55,8 @@ music.play(tune)
 
 `music.pitch(440, 6)`
 
+
+
 ### [Radio](https://microbit-micropython.readthedocs.io/en/latest/tutorials/radio.html)
 
 `import radio`
@@ -98,6 +100,8 @@ music.play(tune)
 `neopixel.Neopixel(pin0, 10)`
 
 `neopixel.Neopixel.show()`
+
+
 
 ### [Pause](https://microbit-micropython.readthedocs.io/en/latest/microbit.html#microbit.sleep)
 
