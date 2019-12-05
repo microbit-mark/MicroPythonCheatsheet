@@ -136,7 +136,7 @@ while True:
 ```python
 if accelerometer.was_gesture("shake"):
     display.scroll('shake')
-elif: accelerometer.was_gesture("face down")
+elif accelerometer.was_gesture("face down"):
     display.show(Image.HAPPY)
 else:
      display.clear()
