@@ -1,5 +1,6 @@
 # Python Editor cheatsheet
 
+Just the basics to get coding using MicroPython on the microbit [python.microbit.org](https://python.microbit.org)
 
 
 ## Features
