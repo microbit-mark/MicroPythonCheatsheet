@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="style.css">
+
+
 # 🐍 Python cheatsheet
 
 Just the basics to get coding using MicroPython on the BBC microbit [python.microbit.org](https://python.microbit.org)
