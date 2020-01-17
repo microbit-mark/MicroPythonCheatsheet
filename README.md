@@ -2,6 +2,7 @@
 
 Just the basics to get coding using MicroPython on the BBC microbit [python.microbit.org](https://python.microbit.org)
 
+[PDF copy for print](https://microbitcheatsheet.mrkn.us/cheatsheet.pdf)
 
 ## Features
 
