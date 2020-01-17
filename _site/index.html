@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>🐍 Python cheatsheet | micro:bit MicroPython cheatsheet</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="🐍 Python cheatsheet" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python Cheatsheet for the BBC micro:bit" />
+<meta property="og:description" content="Python Cheatsheet for the BBC micro:bit" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="micro:bit MicroPython cheatsheet" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/","headline":"🐍 Python cheatsheet","description":"Python Cheatsheet for the BBC micro:bit","name":"micro:bit MicroPython cheatsheet","@type":"WebSite","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=290c8da601a876e1e3b1c74e66c3bc1a3091b5ea">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">micro:bit MicroPython cheatsheet</h1>
+      <h2 class="project-tagline">Python Cheatsheet for the BBC micro:bit</h2>
+      
+        <a href="http://github.com/microbit-mark/MicroPythonCheatsheet" class="btn">View on GitHub</a>
+      
+      
+    </section>
+
+    <section class="main-content">
+      <h1 id="-python-cheatsheet">🐍 Python cheatsheet</h1>
+
+<p>Just the basics to get coding using MicroPython on the BBC microbit <a href="https://python.microbit.org">python.microbit.org</a></p>
+
+<p><a href="https://microbitcheatsheet.mrkn.us/cheatsheet.pdf">PDF copy for print</a></p>
+
+<h2 id="features">Features</h2>
+
+<h3 id="import-microbit-library">import microbit library</h3>
+
+<p>Import every class, function and variable</p>
+
+<p><code class="highlighter-rouge">from microbit import *</code></p>
+
+<p>Import only the display class</p>
+
+<p><code class="highlighter-rouge">from microbit import display</code></p>
+
+<p>Import the microbit library</p>
+
+<p><code class="highlighter-rouge">import microbit</code></p>
+
+<h3 id="buttons"><a href="https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html">Buttons</a></h3>
+
+<p>Was a button pressed?</p>
+
+<p><code class="highlighter-rouge">buttona.was_pressed()</code></p>
+
+<p>Is a button currently pressed?</p>
+
+<p><code class="highlighter-rouge">buttonb.is_pressed()</code></p>
+
+<h3 id="accelerometer"><a href="https://microbit-micropython.readthedocs.io/en/latest/accelerometer.html">Accelerometer</a></h3>
+
+<p>Gestures: <code class="highlighter-rouge">up</code>, <code class="highlighter-rouge">down</code>, <code class="highlighter-rouge">left</code>, <code class="highlighter-rouge">right</code>, <code class="highlighter-rouge">face up</code>, <code class="highlighter-rouge">face down</code>, <code class="highlighter-rouge">freefall</code>, <code class="highlighter-rouge">3g</code>, <code class="highlighter-rouge">6g</code>, <code class="highlighter-rouge">8g</code>, <code class="highlighter-rouge">shake</code></p>
+
+<p>Was the micro:bit shaken?</p>
+
+<p><code class="highlighter-rouge">accelerometer.was_gesture("shake")</code></p>
+
+<p>Is the micro:bit currently falling?</p>
+
+<p><code class="highlighter-rouge">accelerometer.is_gesture("freefall")</code></p>
+
+<p>What is the value of the accellerometer x axis?</p>
+
+<p><code class="highlighter-rouge">accelerometer.get_x()</code></p>
+
+<h3 id="compass"><a href="https://microbit-micropython.readthedocs.io/en/latest/compass.html"> Compass</a></h3>
+
+<p>Run the compass calibration routine</p>
+
+<p><code class="highlighter-rouge">compass.calibrate()</code></p>
+
+<p>What is the compass heading from 0 - 360 degrees?</p>
+
+<p><code class="highlighter-rouge">compass.heading()</code></p>
+
+<p>What is the field strength on the y axis in nano teslas?</p>
+
+<p><code class="highlighter-rouge">compass.get_y()</code></p>
+
+<h3 id="music"><a href="https://microbit-micropython.readthedocs.io/en/latest/music.html">Music</a></h3>
+
+<p>Play happy birthday</p>
+
+<p><code class="highlighter-rouge">music.play(music.BIRTHDAY)</code></p>
+
+<p>Create an array called <code class="highlighter-rouge">tune</code> of “NOTE OCTAVE:DURATION” then play it.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tune</span> <span class="o">=</span> <span class="p">[</span><span class="s">"C4:4"</span><span class="p">,</span> <span class="s">"D4:4"</span><span class="p">,</span> <span class="s">"E4:4"</span><span class="p">,</span> <span class="s">"C4:4"</span><span class="p">,</span> <span class="s">"C4:4"</span><span class="p">,</span> <span class="s">"D4:4"</span><span class="p">,</span> <span class="s">"E4:4"</span><span class="p">,</span> <span class="s">"C4:4"</span><span class="p">,</span>
+        <span class="s">"E4:4"</span><span class="p">,</span> <span class="s">"F4:4"</span><span class="p">,</span> <span class="s">"G4:8"</span><span class="p">,</span> <span class="s">"E4:4"</span><span class="p">,</span> <span class="s">"F4:4"</span><span class="p">,</span> <span class="s">"G4:8"</span><span class="p">]</span>
+<span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">tune</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Play a pitch (Frequency(Hz), Duration(ticks))</p>
+
+<p><code class="highlighter-rouge">music.pitch(440, 6)</code></p>
+
+<p>Set the tempo</p>
+
+<p><code class="highlighter-rouge">music.set_tempo(ticks=4, bpm=120)</code></p>
+
+<h3 id="radio"><a href="https://microbit-micropython.readthedocs.io/en/latest/tutorials/radio.html">Radio</a></h3>
+
+<p>Import the radio module</p>
+
+<p><code class="highlighter-rouge">import radio</code></p>
+
+<p>Turn the radio on or off</p>
+
+<p><code class="highlighter-rouge">radio.on()</code></p>
+
+<p>Send a string via radio</p>
+
+<p><code class="highlighter-rouge">radio.send('duck')</code></p>
+
+<p>Return whatever radio message was received</p>
+
+<p><code class="highlighter-rouge">radio.receive()</code></p>
+
+<h3 id="inputoutput-pins"><a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">Input/Output pins</a></h3>
+
+<p>Is a pin currently being touched?</p>
+
+<p><code class="highlighter-rouge">pin0.is_touched()</code></p>
+
+<p>Return the current value on a pin</p>
+
+<p><code class="highlighter-rouge">pin1.read_analog()</code></p>
+
+<p>Write a value to a pin</p>
+
+<p><code class="highlighter-rouge">pin2.write-digital(1)</code></p>
+
+<h3 id="led-display-text-image">LED Display (text, <a href="https://microbit-micropython.readthedocs.io/en/latest/image.html">image</a>)</h3>
+
+<p>Images: <code class="highlighter-rouge">HEART</code>, <code class="highlighter-rouge">HEART_SMALL</code>, <code class="highlighter-rouge">HAPPY</code>, <code class="highlighter-rouge">SMILE</code>, <code class="highlighter-rouge">SAD</code>,<code class="highlighter-rouge">CONFUSED</code>, <code class="highlighter-rouge">ANGRY</code>, <code class="highlighter-rouge">ASLEEP</code>, <code class="highlighter-rouge">SURPRISED</code>, <code class="highlighter-rouge">SILLY</code>, <code class="highlighter-rouge">FABULOUS</code>, <code class="highlighter-rouge">MEH</code>, <code class="highlighter-rouge">YES</code>, <code class="highlighter-rouge">NO</code>, <code class="highlighter-rouge">CLOCK12</code>, <code class="highlighter-rouge">CLOCK11</code>, <code class="highlighter-rouge">CLOCK10</code>, <code class="highlighter-rouge">CLOCK9</code>, <code class="highlighter-rouge">CLOCK8</code>, <code class="highlighter-rouge">CLOCK7</code>, <code class="highlighter-rouge">CLOCK6</code>, <code class="highlighter-rouge">CLOCK5</code>, <code class="highlighter-rouge">CLOCK4</code>, <code class="highlighter-rouge">CLOCK3</code>, <code class="highlighter-rouge">CLOCK2</code>, <code class="highlighter-rouge">CLOCK1</code>, <code class="highlighter-rouge">ARROW_N</code>, <code class="highlighter-rouge">ARROW_NE</code>, <code class="highlighter-rouge">ARROW_E</code>, <code class="highlighter-rouge">ARROW_SE</code>, <code class="highlighter-rouge">ARROW_S</code>, <code class="highlighter-rouge">ARROW_SW</code>, <code class="highlighter-rouge">ARROW_W</code>, <code class="highlighter-rouge">ARROW_NW</code>, <code class="highlighter-rouge">TRIANGLE</code>, <code class="highlighter-rouge">TRIANGLE_LEFT</code>, <code class="highlighter-rouge">CHESSBOARD</code>, <code class="highlighter-rouge">DIAMOND</code>, <code class="highlighter-rouge">DIAMOND_SMALL</code>, <code class="highlighter-rouge">SQUARE</code>, <code class="highlighter-rouge">SQUARE_SMALL</code>, <code class="highlighter-rouge">RABBIT</code>, <code class="highlighter-rouge">COW</code>, <code class="highlighter-rouge">MUSIC_CROTCHET</code>, <code class="highlighter-rouge">MUSIC_QUAVER</code>, <code class="highlighter-rouge">MUSIC_QUAVERS</code>, <code class="highlighter-rouge">PITCHFORK</code>, <code class="highlighter-rouge">XMAS</code>, <code class="highlighter-rouge">PACMAN</code>, <code class="highlighter-rouge">TARGET</code>, <code class="highlighter-rouge">TSHIRT</code>, <code class="highlighter-rouge">ROLLERSKATE</code>, <code class="highlighter-rouge">DUCK</code>, <code class="highlighter-rouge">HOUSE</code>, <code class="highlighter-rouge">TORTOISE</code>, <code class="highlighter-rouge">BUTTERFLY</code>, <code class="highlighter-rouge">STICKFIGURE</code>, <code class="highlighter-rouge">GHOST</code>, <code class="highlighter-rouge">SWORD</code>, <code class="highlighter-rouge">GIRAFFE</code>, <code class="highlighter-rouge">SKULL</code>, <code class="highlighter-rouge">UMBRELLA</code>, <code class="highlighter-rouge">SNAKE</code></p>
+
+<p>Scroll a string across the display</p>
+
+<p><code class="highlighter-rouge">display.scroll('hello world')</code></p>
+
+<p>Show an image on the display</p>
+
+<p><code class="highlighter-rouge">display.show(Image.DUCK)</code></p>
+
+<p>Return the light level from the display</p>
+
+<p><code class="highlighter-rouge">display.read_light_level()</code></p>
+
+<h3 id="temperature"><a href="https://microbit-micropython.readthedocs.io/en/latest/microbit.html?highlight=temp#microbit.temperature">Temperature</a></h3>
+
+<p>What is the current temperature?</p>
+
+<p><code class="highlighter-rouge">temperature()</code></p>
+
+<h3 id="neopixels"><a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">Neopixels</a></h3>
+
+<p>Import the Neopixel module</p>
+
+<p><code class="highlighter-rouge">import neopixel</code></p>
+
+<p>Initialise a strip of Neopixels (pin, number of Neopixels)</p>
+
+<p><code class="highlighter-rouge">neopixel.Neopixel(pin0, 10)</code></p>
+
+<p>Send the current colour data to the Neopixels</p>
+
+<p><code class="highlighter-rouge">neopixel.Neopixel.show()</code></p>
+
+<h3 id="pause"><a href="https://microbit-micropython.readthedocs.io/en/latest/microbit.html#microbit.sleep">Pause</a></h3>
+
+<p>Sleep for a number of milliseconds(ms)</p>
+
+<p><code class="highlighter-rouge">sleep(500)</code></p>
+
+<p> </p>
+
+<h2 id="coding-concepts">Coding concepts</h2>
+
+<h3 id="variables">Variables</h3>
+
+<p>Set the compass heading to a variable</p>
+
+<p><code class="highlighter-rouge">direction = compass.heading()</code></p>
+
+<p>Set the received radio message to a variable</p>
+
+<p><code class="highlighter-rouge">incoming = radio.receive()</code></p>
+
+<h3 id="loops">Loops</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HEART_SMALL</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="conditions">Conditions</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s">"shake"</span><span class="p">):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s">'shake'</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s">"face down"</span><span class="p">):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HAPPY</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="micropython-easter-eggs">MicroPython Easter Eggs</h3>
+
+<p><code class="highlighter-rouge">import love()</code></p>
+
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="http://github.com/microbit-mark/MicroPythonCheatsheet">MicroPythonCheatsheet</a> is maintained by <a href="http://github.com/microbit-mark">microbit-mark</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  </body>
+</html>
