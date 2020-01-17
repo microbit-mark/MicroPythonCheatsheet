@@ -194,10 +194,10 @@ Set the received radio message to a variable
 
 ```python
 while True:
-     display.show(Image.HEART)
-     sleep(10)
-     display.show(Image.HEART_SMALL)
-    sleep(10)
+        display.show(Image.HEART)
+        sleep(10)
+        display.show(Image.HEART_SMALL)
+        sleep(10)
 ```
 
 
@@ -206,11 +206,11 @@ while True:
 
 ```python
 if accelerometer.was_gesture("shake"):
-    display.scroll('shake')
-elif accelerometer.was_gesture("face down"):
-    display.show(Image.HAPPY)
+        display.scroll('shake')
+        elif accelerometer.was_gesture("face down"):
+        display.show(Image.HAPPY)
 else:
-     display.clear()
+        display.clear()
 ```
 
 ### MicroPython Easter Eggs
