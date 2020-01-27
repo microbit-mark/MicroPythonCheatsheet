@@ -26,11 +26,11 @@ Import the microbit library
 
 Was a button pressed?
 
-`buttona.was_pressed()`
+`button_a.was_pressed()`
 
 Is a button currently pressed?
 
-`buttonb.is_pressed()`
+`button_b.is_pressed()`
 
 
 
