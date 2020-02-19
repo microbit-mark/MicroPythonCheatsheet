@@ -226,5 +226,5 @@ def happyBirthday(name, age):
     return "Happy Birthday " + name + ", you are " + str(age) + " years old"
 
 display.scroll(happyBirthday("Emma", 8))
-display.scroll(printBirthdayGreeting("Mark", 9))
+display.scroll(happyBirthday("Mark", 9))
 ```
