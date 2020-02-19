@@ -4,23 +4,13 @@ Just the basics to get coding using MicroPython on the BBC microbit [python.micr
 
 [PDF copy for print](https://microbitcheatsheet.mrkn.us/cheatsheet.pdf)
 
-## Features
-
-### import microbit library
+### import microbit library (usually the first line of code)
 
 Import every class, function and variable
 
 `from microbit import *`
 
-Import only the display class
-
-`from microbit import display`
-
-Import the microbit library
-
-`import microbit`
-
-
+## Features
 
 ### [Buttons](https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html)
 
@@ -52,7 +42,7 @@ What is the value of the accellerometer x axis?
 
 
 
-### [ Compass](https://microbit-micropython.readthedocs.io/en/latest/compass.html)
+### [Compass](https://microbit-micropython.readthedocs.io/en/latest/compass.html)
 
 Run the compass calibration routine
 
@@ -200,6 +190,19 @@ while True:
         display.show(Image.HEART_SMALL)
         sleep(10)
 ```
+``` python
+while (temperature() < 18):
+    display.scroll(Image.SAD)
+    sleep(1000)
+```
+``` python
+for i in range (5):
+   # set the pixel in column 0, row i to 9
+   display.set_pixel(0, i, 9)
+
+   # set the pixel in column 4, row i to 9
+   display.set_pixel(4, i, 9)
+```
 
 
 
@@ -208,14 +211,20 @@ while True:
 ```python
 if accelerometer.was_gesture("shake"):
         display.scroll('shake')
-        elif accelerometer.was_gesture("face down"):
+elif accelerometer.was_gesture("face down"):
         display.show(Image.HAPPY)
 else:
         display.clear()
 ```
 
-### MicroPython Easter Eggs
-
-`import love()`
 
 
+### Functions
+
+```python
+def happyBirthday(name, age):
+    return "Happy Birthday " + name + ", you are " + str(age) + " years old"
+
+display.scroll(happyBirthday("Emma", 8))
+display.scroll(printBirthdayGreeting("Mark", 9))
+```
